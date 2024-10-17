@@ -52,8 +52,8 @@ training_dataset = args.training_dataset
 save_folder = args.save_folder
 
 net = RetinaFace(cfg=cfg)
-print("Printing net...")
-print(net)
+# print("Printing net...")
+# print(net)
 
 if args.resume_net is not None:
     print('Loading resume network...')

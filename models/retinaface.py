@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from collections import OrderedDict
 
 from models.net import MobileNetV1 as MobileNetV1
-from models.net import FPN as FPN
+from models.net import BiFPN as FPN
 from models.net import SSH as SSH
 
 
@@ -106,7 +106,7 @@ class RetinaFace(nn.Module):
 
     def forward(self,inputs):
         out = self.body(inputs)
-
+        # print("output shape:", [v.shape for k, v in out.items()])
         # FPN
         fpn = self.fpn(out)
 
